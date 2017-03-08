@@ -9,8 +9,148 @@
 
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <title>eCommerce Checkout</title>
+
+    <link defer rel="stylesheet" href="checkout.css">
   </head>
   <body>
+    <div id="content">
+      <form>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <h1>Checkout</h1>
+            </div>
+          </div>
+
+          <div id="summary">
+            <div class="row">
+              <div class="col-sm-12"><h2>Your Purchase</h2></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">one</div>
+              <div class="col-sm-3">two</div>
+              <div class="col-sm-3">three</div>
+              <div class="col-sm-3">four</div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">one</div>
+              <div class="col-sm-3">two</div>
+              <div class="col-sm-3">three</div>
+              <div class="col-sm-3">four</div>
+            </div> <!-- end of row -->
+          </div>
+          <div id="shipping">
+            <div class="row">
+              <div class="col-sm-4">
+                <label for="shipping-first">First Name</label>
+                <input type="text" name="shipping-first"></input>
+              </div>
+              <div class="col-sm-4">
+                <label for="shipping-last">Last Name</label>
+                <input type="text" name="shipping-last"></input>
+              </div>
+              <div class="col-sm-4">
+                <label for="shipping-company">Company</label>
+                <input type="text" name="shipping-company"></input>
+              </div>
+            </div> <!-- end of row -->
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="shipping-address-1">Address Line 1</label>
+                <input type="text" name="shipping-address-1"></input>
+              </div>
+              <div class="col-sm-6">
+                <label for="shipping-address-2">Address Line 2</label>
+                <input type="text" name="shipping-address-2"></input>
+              </div>
+            </div> <!-- end of row -->
+            <div class="row">
+              <div class="col-sm-3">
+                <label for="shipping-state">State</label>
+                <select type="dropdown" name="shipping-state">
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CO">Colorado</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                <label for="shipping-zip">Zip</label>
+                <input type="text" name="shipping-zip"></input>
+              </div>
+              <div class="col-sm-3">
+                <label for="shipping-copy_id">Copy shipping to billing</label>
+                <input id="shipping-copy_id" type="checkbox" name="shipping-copy"></input>
+              </div>
+            </div> <!-- end of row -->
+          </div>
+          <div id="billing">
+            <div class="row">
+              <div class="col-sm-4">
+                <label for="billing-first">First Name</label>
+                <input type="text" name="billing-first"></input>
+              </div>
+              <div class="col-sm-4">
+                <label for="billing-last">Last Name</label>
+                <input type="text" name="billing-last"></input>
+              </div>
+              <div class="col-sm-4">
+                <label for="billing-company">Company</label>
+                <input type="text" name="billing-company"></input>
+              </div>
+            </div> <!-- end of row -->
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="billing-address-1">Address Line 1</label>
+                <input type="text" name="billing-address-1"></input>
+              </div>
+              <div class="col-sm-6">
+                <label for="billing-address-2">Address Line 2</label>
+                <input type="text" name="billing-address-2"></input>
+              </div>
+            </div> <!-- end of row -->
+            <div class="row">
+              <div class="col-sm-3">
+                <label for="billing-state">State</label>
+                <select type="dropdown" name="billing-state">
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CO">Colorado</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                <label for="billing-zip">Zip</label>
+                <input type="text" name="billing-zip"></input>
+              </div>
+              <div class="col-sm-3">
+                <label for="billing-copy_id">Copy shipping to billing</label>
+                <input id="billing-copy_id" type="checkbox" name="billing-copy"></input>
+              </div>
+            </div> <!-- end of row -->
+          </div> <!-- end of billing -->
+          <div id="cc-information">
+            <div class="row">
+              <div class="col-sm-3">
+                <label for="cc-number">Credit Card Number</label>
+                <input type="text" name="cc-number"></input>
+              </div>
+              <div class="col-sm-3">
+                <label for="cc-expiration">Credit Card Expiry</label>
+                <input type="text" name="cc-expiration"></input>
+              </div>
+              <div class="col-sm-3">
+                <label for="cc-cvc">Credit Card Number</label>
+                <input type="text" name="cc-cvc"></input>
+              </div>
+              <div class="col-sm-3">
+               <input type="submit" name="purchase" value="Purchase"></input>
+              </div>
+            </div>
+          </div> <!--end of billing -->
+        </div>
+      </form>
+    </div>
 
   </body>
 </html>
