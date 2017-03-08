@@ -1,3 +1,8 @@
-navbar-header {
+.navbar-header {
   font-size: 20px;
+}
+
+.img-thumbnail {
+  width: 20%;
+  height: 20%;
 }
