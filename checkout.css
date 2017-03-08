@@ -1,10 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 #content{
   border:1px solid red;
 }
 
-#content #summary{
+#content #summary {
   background-color: #ccc;
+
+
 }
 label {
   display: block;
+  font-weight: lighter;
 }
