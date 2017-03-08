@@ -1,52 +1,43 @@
 
-// SHIPPING
-// shipping-first
-
-
-// shipping-last
-
-
-// shipping-company
-
-
-// shipping-address-1
-
-
-// shipping-address-2
-
-
-// shipping-state
-
-
-// shipping-state
-
-
-// shipping-zip
-
-
-// shipping-copy-id
-
-
-// BILLING
-// billing-first
-
-
-// billing-last
-
-
-// billing-company
-
-
-// billing-address-1
-
-
-// billing-address-2
-
-
-// billing-state
-
-
-// billing-zip
+$().ready(function() {
+  $('#purchase').validate({
+    console.log('here now')
+    rules: {
+      shipping-first: {
+        required: true
+      },
+      shipping-last: {
+        required: true
+      },
+      shipping-address-1: {
+        required: true
+      },
+      shipping-address-2: {
+        required: true
+      },
+      shipping-zip: {
+        required: true,
+        minlength: 5
+      },
+      billing-first: {
+        required: true
+      },
+      billing-last: {
+        required: true
+      },
+      billing-address-1: {
+        required: true
+      },
+      billing-address-2: {
+        required: true
+      },
+      billing-zip: {
+        required: true,
+        minlength: 5
+      }
+    } // end rules
+  }) // $('#purchase').validate
+}) // end $().ready(function()
 
 
 // billing-copy-id
