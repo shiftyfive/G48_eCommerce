@@ -1,0 +1,10 @@
+#content{
+  border:1px solid red;
+}
+
+#content #summary{
+  background-color: #ccc;
+}
+label {
+  display: block;
+}
