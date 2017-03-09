@@ -5,7 +5,7 @@
 
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-     <!-- jquery validation -->
+     <!-- validation -->
     <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js'</script>
 
     <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js'</script>
@@ -13,6 +13,8 @@
       <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.js'</script>
 
       <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js'</script>
+
+      <script src="https://js.stripe.com/v3/"></script>
 
       <script defer src='checkout.js'></script>
 
@@ -37,20 +39,20 @@
             </div>
           </div>
 
-          <div id="summary" class="form-group">
-            <div class="row padded-left">
-              <div class="col-sm-12"><h3>Your Purchase</h3></div>
+          <div id="summary" class="form-group bg-info">
+            <div class="row">
+              <div class="col-sm-12 col-sm-push-1" ><h2>Your Purchase</h2></div>
             </div>
             <div class="row">
-              <div class="col-sm-3">Lisa Marie Presley x 1</div>
+              <div class="col-sm-3 col-sm-push-1">Lisa Marie Presley x 1</div>
               <div class="col-sm-3">$30.00</div>
               <div class="col-sm-3"></div>
               <div class="col-sm-3"></div>
             </div>
-            <div class="row">
-              <div class="col-sm-3">Patricia Arquette x 2</div>
+            <div class="row padded-bottom">
+              <div class="col-sm-3 col-sm-push-1">Patricia Arquette x 2</div>
               <div class="col-sm-3">$30.00</div>
-              <div class="col-sm-3">Total:</div>
+              <div class="col-sm-3 col-sm-push-2">Total:</div>
               <div class="col-sm-3">$60.00</div>
             </div> <!-- end of row -->
           </div>
@@ -82,8 +84,8 @@
             <div class="row user-data form-group">
               <div class="col-sm-4">
                 <label for="shipping-state">State</label>
-                <select id="shipping-state" type="dropdown" name="shipping-state" required>
-                  <option class="temporary" value="">Select a State</option>
+                <select id="shipping-state" type="dropdown" class=" btn-lg" name="shipping-state" required>
+                  <option value="">Select a State</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -139,7 +141,7 @@
               </div>
               <div class="col-sm-4">
                 <label for="shipping-zip">Zip</label>
-                <input id="shipping-zip" type="text" minlength="5" name="shipping-zip" class="form-control" required></input>
+                <input id="shipping-zip" type="text" name="shipping-zip" class="form-control" pattern="\d{5}-?(\d{4})?" required></input>
               </div>
               <div class="col-sm-4">
                 <label for="shipping-copy-id">Copy shipping to billing
@@ -170,13 +172,13 @@
               </div>
               <div class="col-sm-6">
                 <label for="billing-address-2">Address Line 2</label>
-                <input id="billing-address-2" type="text" name="billing-address-2" class="form-control"></input>
+                <input id="billing-address-2" type="text"  name="billing-address-2" class="form-control"></input>
               </div>
             </div> <!-- end of row -->
             <div class="row user-data form-group ">
               <div class="col-sm-4">
                 <label for="billing-state">State</label>
-                <select id="billing-state" type="dropdown" name="billing-state" required>
+                <select id="billing-state" type="dropdown" class="btn-lg" name="billing-state" required>
                   <option selected>Select a State</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
@@ -233,7 +235,7 @@
               </div>
               <div class="col-sm-4">
                 <label for="billing-zip">Zip</label>
-                <input id="billing-zip" type="text" name="billing-zip" class="form-control" minlength="5" required></input>
+                <input id="billing-zip" type="text" name="billing-zip" class="form-control" pattern="\d{5}-?(\d{4})?" required></input>
               </div>
               <div class="col-sm-4">
               </div>
@@ -243,7 +245,7 @@
             <div class="row user-data form-group">
               <div class="col-sm-3">
                 <label for="cc-number">Credit Card Number</label>
-                <input id="cc-number" type="text" name="cc-number" class="form-control" minlength="12" required></input>
+                <input id="cc-number" type="text" name="cc-number" class="form-control" minlength="16" pattern="\^[0-9]{16}$" required></input>
               </div>
               <div class="col-sm-3">
                 <label for="cc-expiration">Credit Card Expiry</label>
@@ -255,7 +257,7 @@
               </div>
               <div class="col-sm-3">
                 <label for="submit" name="submit" class=".sr-only"></label>
-                <input id="submit-button" type="submit" name="purchase" value="Purchase"></input>
+                <input id="submit-button" type="submit" class="btn btn-primary btn-lg" name="purchase" value="Purchase"></input>
               </div>
             </div> <!-- end of row -->
           </div> <!--end of billing -->

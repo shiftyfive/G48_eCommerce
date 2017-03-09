@@ -1,16 +1,14 @@
 
 $().ready(function() {
 
-// this is from stack overflow
-  $.validator.addMethod(
-        "regex",
-        function(value, element, regexp) {
-          console.log('arg', arguments)
-            var re = new RegExp(regexp);
-            return this.optional(element) || re.test(value);
-        },
-        "Please check your input."
-);
+// this is from stack overflow, to deal with the zip-code
+  $.validator.addMethod("regex", function(value, element, regexp) {
+      console.log('arg', arguments)
+      var re = new RegExp(regexp);
+      return this.optional(element) || re.test(value);
+    },
+    "Please check your input."
+  );
 
   var validator = $("#purchase").validate({
     'shipping-first': {
@@ -31,6 +29,8 @@ $().ready(function() {
     'shipping-zip': {
       required: true,
       regex: "^[0-9]{5}$"
+      //"^[0-9]{5}$"
+      // "\d{5}-?(\d{4})?"
     },
     'billing-first': {
       required: true
@@ -47,16 +47,11 @@ $().ready(function() {
     'billing-zip': {
       required: true,
       regex: "^[0-9]{5}$"
+      // OR "^[0-9]{5}$" = "-" + "^[0-9]{4}$"
     }
   })
 
-  $('#purchase').on('submit', function (e) {
-   e.preventDefault();
-    if (validator.element("#shipping-first")) {
-   }
-  });
-
-  $("#shipping-copy-id").click(function(e){
+  $("#shipping-copy-id").click(function(e) {
     var el = $(e.currentTarget);
     console.log("CHECKED?",el.is(":checked"))
 
@@ -70,29 +65,43 @@ $().ready(function() {
       $('#billing-zip').val($('#shipping-zip').val())
     }
   });
+
+  $('#purchase').on('submit', function (e) {
+   e.preventDefault();
+    if (validator.element("#shipping-first")) {
+   }
+  });
+
 })
 
-  // $("#submit-button").click(function() {
-  //       if ($("#purchase").valid())
-  //             console.console.log();("Valid!");
-  //       else
-  //             validator.focusInvalid();
-  //
-  //       return false;
-  // });
 
-  // $("#shipping-first").blur(function() {
-  //   var value = $.trim($("#shipping-first").val());
-  //   if (!value) {
-  //     $('#shipping-first').addClass('invalid-data')
-  //     $('#shipping-first').focus()
-  //       console.log('????')
-  //   }
-  // });
-
-
-  // this is how to remove a value on blur - it works but leave a blank, it seems
-  // $('#shipping-state').blur(function() {
-  //   console.log('fuck it all')
-  //   $('.temporary').empty();
-  // });
+// ADDING THIS IN CASE WE NEED TO SUBMIT THE DATA SOMEWHERE
+// var url = 'https://galvanize-student-apis.herokuapp.com/gpersonnel/roles'
+//
+// $.getJSON(url, function (response) {
+//  $.each(response, function (index, role) {
+//    $('.select-role').append('<option value="' + role.title + '">' + role.title + '</option>')
+//    $('.select-role').change(function () {
+//      $('.role-preview').attr('src', role.img)
+//    })
+//  })
+// })
+//
+// function postForm () {
+//  var $xhr = $.ajax({
+//    method: 'POST',
+//    url: 'https://galvanize-student-apis.herokuapp.com/gpersonnel/users',
+//    dataType: 'json',
+//    data: {firstName:$('#first-name').val(), lastName:$('#last-name').val(), role:$('#select-role option:selected').val()}
+//  }).then(function (result) {
+//    $('.save-status').append(result.message).fadeIn(500).delay(2000).fadeOut(500)
+//  })
+//  }).catch(function (error) {
+//    console.log('Error: ', error);
+//  })
+// }
+//
+// $('form').on('submit', function (e) {
+//  e.preventDefault();
+//  postForm();
+// });

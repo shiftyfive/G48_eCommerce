@@ -3,8 +3,8 @@
 }
 
 #content #summary {
-  background-color: #ccc;
-
+  /*background-color: #2c3e50;
+  color: white;*/
 
 }
 label {
@@ -12,8 +12,8 @@ label {
   font-weight: lighter;
 }
 
-.padded-left {
-  margin-left: ($spacer-x * .25);
+.padded-bottom {
+  margin-bottom: 0 0 6px 0;
 }
 
 .invalid-data {
