@@ -60,7 +60,7 @@
         </div>
     </div>
     <div id="content">
-      <form id="purchase" method="get" action="">
+      <form id="purchase" method="get" target="ordersummary.html" action="">
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
@@ -70,7 +70,7 @@
 
           <div id="summary" class="form-group bg-info">
             <div class="row">
-              <div class="col-sm-12 col-sm-push-1" ><h2>Your Purchase</h2></div>
+              <div class="col-sm-11 col-sm-push-1" ><h2>Your Purchase</h2></div>
             </div>
             <div class="row">
               <div class="col-sm-3 col-sm-push-1">Lisa Marie Presley x 1</div>
@@ -274,7 +274,7 @@
             <div class="row user-data form-group">
               <div class="col-sm-3">
                 <label for="cc-number">Credit Card Number</label>
-                <input id="cc-number" type="text" name="cc-number" class="form-control" minlength="16" pattern="\^[0-9]{16}$" required></input>
+                <input id="cc-number" type="text" name="cc-number" class="form-control" pattern="^[0-9]{16}$" required></input>
               </div>
               <div class="col-sm-3">
                 <label for="cc-expiration">Credit Card Expiry</label>
