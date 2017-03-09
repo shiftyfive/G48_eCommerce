@@ -5,7 +5,7 @@
 
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    // jquery validation
+     <!-- validation -->
     <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js'</script>
 
     <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js'</script>
@@ -14,7 +14,9 @@
 
       <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js'</script>
 
-      <script defer>src='checkout.js '</script>
+      <script src="https://js.stripe.com/v3/"></script>
+
+      <script defer src='checkout.js'></script>
 
     <link defer rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -58,7 +60,7 @@
         </div>
     </div>
     <div id="content">
-      <form id="purchase">
+      <form id="purchase" method="get" action="">
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
@@ -66,52 +68,53 @@
             </div>
           </div>
 
-          <div id="summary">
+          <div id="summary" class="form-group bg-info">
             <div class="row">
-              <div class="col-sm-12"><h2>Your Purchase</h2></div>
+              <div class="col-sm-12 col-sm-push-1" ><h2>Your Purchase</h2></div>
             </div>
             <div class="row">
-              <div class="col-sm-3">one</div>
-              <div class="col-sm-3">two</div>
-              <div class="col-sm-3">three</div>
-              <div class="col-sm-3">four</div>
+              <div class="col-sm-3 col-sm-push-1">Lisa Marie Presley x 1</div>
+              <div class="col-sm-3">$30.00</div>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3"></div>
             </div>
-            <div class="row">
-              <div class="col-sm-3">one</div>
-              <div class="col-sm-3">two</div>
-              <div class="col-sm-3">three</div>
-              <div class="col-sm-3">four</div>
+            <div class="row padded-bottom">
+              <div class="col-sm-3 col-sm-push-1">Patricia Arquette x 2</div>
+              <div class="col-sm-3">$30.00</div>
+              <div class="col-sm-3 col-sm-push-2">Total:</div>
+              <div class="col-sm-3">$60.00</div>
             </div> <!-- end of row -->
           </div>
           <div id="shipping">
-            <div class="row">
+            <div class="row user-data form-group">
               <div class="col-sm-4">
                 <label for="shipping-first">First Name</label>
-                <input type="text" name="shipping-first"></input>
+                <input id="shipping-first" type="text" name="shipping-first" class="form-control" minlength="1" required></input>
               </div>
               <div class="col-sm-4">
                 <label for="shipping-last">Last Name</label>
-                <input type="text" name="shipping-last"></input>
+                <input id="shipping-last" type="text" name="shipping-last" class="form-control" minlength="1" required></input>
               </div>
               <div class="col-sm-4">
                 <label for="shipping-company">Company</label>
-                <input type="text" name="shipping-company"></input>
+                <input id="shipping-company" type="text" name="shipping-company" class="form-control" minlength="1" required></input>
               </div>
             </div> <!-- end of row -->
-            <div class="row">
+            <div class="row user-data form-group">
               <div class="col-sm-6">
                 <label for="shipping-address-1">Address Line 1</label>
-                <input type="text" name="shipping-address-1"></input>
+                <input id="shipping-address-1" type="text" name="shipping-address-1" class="form-control" minlength="1" minlength="1" required></input>
               </div>
               <div class="col-sm-6">
                 <label for="shipping-address-2">Address Line 2</label>
-                <input type="text" name="shipping-address-2"></input>
+                <input id="shipping-address-2" type="text" name="shipping-address-2" class="form-control"></input>
               </div>
             </div> <!-- end of row -->
-            <div class="row">
-              <div class="col-sm-3">
+            <div class="row user-data form-group">
+              <div class="col-sm-4">
                 <label for="shipping-state">State</label>
-                <select type="dropdown" name="shipping-state">
+                <select id="shipping-state" type="dropdown" class=" btn-lg" name="shipping-state" required>
+                  <option value="">Select a State</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -165,45 +168,47 @@
                   <option value="WY">Wyoming</option>
                 </select>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <label for="shipping-zip">Zip</label>
-                <input type="text" minlength="5" name="shipping-zip"></input>
+                <input id="shipping-zip" type="text" name="shipping-zip" class="form-control" pattern="\d{5}-?(\d{4})?" required></input>
               </div>
-              <div class="col-sm-3">
-                <label for="shipping-copy_id">Copy shipping to billing</label>
-                <input id="shipping-copy_id" type="checkbox" name="shipping-copy"></input>
+              <div class="col-sm-4">
+                <label for="shipping-copy-id">Copy shipping to billing
+                <input id="shipping-copy-id" type="checkbox" name="shipping-copy-id" class="form-control"></input>
+                </label>
               </div>
             </div> <!-- end of row -->
           </div>
           <div id="billing">
-            <div class="row">
+            <div class="row user-data form-group">
               <div class="col-sm-4">
                 <label for="billing-first">First Name</label>
-                <input type="text" name="billing-first"></input>
+                <input id="billing-first" type="text" name="billing-first" class="form-control" minlength="1"></input>
               </div>
               <div class="col-sm-4">
                 <label for="billing-last">Last Name</label>
-                <input type="text" name="billing-last"></input>
+                <input id="billing-last" type="text" name="billing-last" class="form-control" minlength="1" required></input>
               </div>
               <div class="col-sm-4">
                 <label for="billing-company">Company</label>
-                <input type="text" name="billing-company"></input>
+                <input id="billing-company" type="text" name="billing-company" class="form-control"></input>
               </div>
             </div> <!-- end of row -->
-            <div class="row">
+            <div class="row user-data form-group ">
               <div class="col-sm-6">
                 <label for="billing-address-1">Address Line 1</label>
-                <input type="text" name="billing-address-1"></input>
+                <input id="billing-address-1" type="text" name="billing-address-1" class="form-control" minlength="1" required></input>
               </div>
               <div class="col-sm-6">
                 <label for="billing-address-2">Address Line 2</label>
-                <input type="text" name="billing-address-2"></input>
+                <input id="billing-address-2" type="text"  name="billing-address-2" class="form-control"></input>
               </div>
             </div> <!-- end of row -->
-            <div class="row">
-              <div class="col-sm-3">
+            <div class="row user-data form-group ">
+              <div class="col-sm-4">
                 <label for="billing-state">State</label>
-                <select type="dropdown" name="billing-state">
+                <select id="billing-state" type="dropdown" class="btn-lg" name="billing-state" required>
+                  <option selected>Select a State</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -256,33 +261,32 @@
                   <option value="WI">Wisconsin</option>
                   <option value="WY">Wyoming</option>
                 </select>
-              </div> <!-- end of row -->
-              <div class="col-sm-3">
-                <label for="billing-zip">Zip</label>
-                <input type="text" name="billing-zip"></input>
               </div>
-              <div class="col-sm-3">
-                <label for="billing-copy_id">Copy shipping to billing</label>
-                <input id="billing-copy_id" type="checkbox" name="billing-copy"></input>
+              <div class="col-sm-4">
+                <label for="billing-zip">Zip</label>
+                <input id="billing-zip" type="text" name="billing-zip" class="form-control" pattern="\d{5}-?(\d{4})?" required></input>
+              </div>
+              <div class="col-sm-4">
               </div>
             </div> <!-- end of row -->
           </div> <!-- end of billing -->
           <div id="cc-information">
-            <div class="row">
+            <div class="row user-data form-group">
               <div class="col-sm-3">
                 <label for="cc-number">Credit Card Number</label>
-                <input type="text" name="cc-number"></input>
+                <input id="cc-number" type="text" name="cc-number" class="form-control" minlength="16" pattern="\^[0-9]{16}$" required></input>
               </div>
               <div class="col-sm-3">
                 <label for="cc-expiration">Credit Card Expiry</label>
-                <input type="date" name="cc-expiration"></input>
+                <input id="cc-expiration" type="date" name="cc-expiration" class="form-control" required></input>
+              </div>
+              <div class="col-sm-3 has-feedback">
+                <label for="cc-cvc">Credit Card CVC</label>
+                <input type="text" name="cc-cvc" class="form-control" minlength="3" maxlength="3" required></input>
               </div>
               <div class="col-sm-3">
-                <label for="cc-cvc">Credit Card Number</label>
-                <input type="text" name="cc-cvc"></input>
-              </div>
-              <div class="col-sm-3">
-               <input type="submit" name="purchase" value="Purchase"></input>
+                <label for="submit" name="submit" class=".sr-only"></label>
+                <input id="submit-button" type="submit" class="btn btn-primary btn-lg" name="purchase" value="Purchase"></input>
               </div>
             </div> <!-- end of row -->
           </div> <!--end of billing -->
