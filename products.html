@@ -11,7 +11,9 @@
 
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <link defer rel="stylesheet" href="products.css">
+
+  <link rel="stylesheet" src="products.css">
+  <script defer src="products.js" charset="utf-8"></script>
 
     <title>eComerce Products</title>
 </head>
@@ -63,99 +65,101 @@
             </div>
         </div>
 
+
+      <div class="row">
+          <h1>Nic Cage</h1>
+
         <div class="row">
             <div class="col-xs-2">
                 <h1>Nic Cage</h1>
             </div>
+
         </div>
 
+      <form>
+        <div class="container">
         <div class="row">
-
-            <div class="col-md-2 text-center"><strong>Sort by:</strong></div>
-
-            <div class="col-md-2 btn-group-*">
-                <div class="dropdown">
-                    <button class="btn-group-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Genre
-              <span class="caret"></span>
-            </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Romantic</a></li>
-                        <li><a href="#">Hilarious</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Don't Care Nic is a GOD</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-2 btn-group-*">
-                <div class="dropdown">
-                    <button class="btn-group-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Rating
-              <span class="caret"></span>
-            </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Over 9000</a></li>
-                        <li><a href="#">5 Stars</a></li>
-                        <li><a href="#">...ish</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Don't Care Nic is a GOD</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-2 btn-group-*">
-                <div class="dropdown">
-                    <button class="btn-group-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Price
-              <span class="caret"></span>
-            </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Over $9000</a></li>
-                        <li><a href="#">$10 - 25</a></li>
-                        <li><a href="#">Free</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Don't Care Nic is a GOD</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-md-2 btn-group-*">
-                <div class="dropdown">
-                    <button class="btn-group-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Release Date
-              <span class="caret"></span>
-            </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">From the Future</a></li>
-                        <li><a href="#">Recent</a></li>
-                        <li><a href="#">Classic</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Don't Care Nic is a GOD</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-md-2 btn-group-*">
-                <div class="dropdown">
-                    <button class="btn-group-sm btn-small dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Movie Name
-              <span class="caret"></span>
-            </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">A - J</a></li>
-                        <li><a href="#">K - S</a></li>
-                        <li><a href="#">T - Z</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Don't Care Nic is a GOD</a></li>
-                    </ul>
-                </div>
-            </div>
-
+          <div class="col-xs-4">
+            <select id="title" type="dropdown" class="btn-lg" name="title">
+             <option value="title">Select by Title</option>
+            </select>
+          </div>
+          <div class="col-xs-4">
+            <select id="title" type="dropdown" class="btn-lg" name="title">
+             <option value="category">Select by Category</option>
+            </select>
+          </div>
+          <div class="col-xs-4">
+            <select id="title" type="dropdown" class="btn-lg" name="title">
+             <option value="year">Select by Year</option>
+            </select>
+          </div>
         </div>
-        <!-- row close -->
 
+        </div> <!-- end of container -->
+      </form>
 
+        
     </div>
+
+
+<hr>
+
+<!-- <div id="productStart" class="row"></div> -->
+
+<!-- <br> -->
+
+<!-- product row 1 -->
+
+<!-- <div class="row">
+  <div class="col-xs-4 text-center">
+    <img id="ppImg1" class='img-rounded' src='http:www.placecage.com/c/300/175'>
+  </div>
+  <div class="col-xs-8">
+    <h4 id="ppTitle1">Nic Cage Movie</h4>
+    <small class="smPPprice1"><strong>$</strong> 00.00</small>
+    <p id="ppRating1">★★★★☆</p>
+    <p id="ppDesc1">description description description description description description description description description description description description description description description description description description description description description description description description</p>
+  </div>
+</div> -->
+
+<!-- </row> -->
+
+<!-- <br> -->
+
+<!-- product row 2 -->
+
+<!-- <div class="row">
+  <div class="col-xs-4 text-center">
+    <img id="ppImg2" class='img-rounded' src='http:www.placecage.com/c/300/175'>
+  </div>
+  <div class="col-xs-8">
+    <h4 id="ppTitle2">Nic Cage Movie</h4>
+    <small class="smPPprice2"><strong>$</strong> 00.00</small>
+    <p id="ppRating2">★★★☆☆</p>
+    <p id="ppDesc2">description description description description description description description description description description description description description description description description description description description description description description description description</p>
+  </div>
+</div> -->
+
+<!-- </row> -->
+
+<!-- <br> -->
+
+<!-- product row 3 -->
+
+<!-- <div class="row">
+  <div class="col-xs-4 text-center">
+    <img id="ppImg3" class='img-rounded' src='http:www.placecage.com/c/300/175'>
+  </div>
+  <div class="col-xs-8">
+    <h4 id="ppTitle3">Nic Cage Movie</h4>
+    <small class="smPPprice3"><strong>$</strong> 00.00</small>
+    <p id="ppRating3">★★★☆☆</p>
+    <p id="ppDesc3">description description description description description description description description description description description description description description description description description description description description description description description description</p>
+  </div>
+</div> -->
+
+<!-- </row> -->
 
     <hr>
     <br>
