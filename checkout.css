@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-#content{
-  border:1px solid red;
-}
-
 #content #summary {
   background-color: #ccc;
 
@@ -14,4 +10,12 @@
 label {
   display: block;
   font-weight: lighter;
+}
+
+.padded-left {
+  margin-left: ($spacer-x * .25);
+}
+
+.invalid-data {
+  border-color: red;
 }
