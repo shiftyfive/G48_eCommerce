@@ -1,7 +1,7 @@
 
 $().ready(function() {
-  console.log('here now')
 
+// this is from stack overflow
   $.validator.addMethod(
         "regex",
         function(value, element, regexp) {
@@ -30,8 +30,6 @@ $().ready(function() {
     },
     'shipping-zip': {
       required: true,
-      // minlength: 5,
-      // maxlength: 9,
       regex: "^[0-9]{5}$"
     },
     'billing-first': {
@@ -48,8 +46,7 @@ $().ready(function() {
     },
     'billing-zip': {
       required: true,
-      minlength: 5,
-      maxlength: 9
+      regex: "^[0-9]{5}$"
     }
   })
 
@@ -59,12 +56,18 @@ $().ready(function() {
    }
   });
 
-  $("#shipping-copy-id").click(function(evt){
-    var el = $(evt.currentTarget);
+  $("#shipping-copy-id").click(function(e){
+    var el = $(e.currentTarget);
     console.log("CHECKED?",el.is(":checked"))
 
     if(el.is(":checked")){
       $('#billing-first').val($('#shipping-first').val())
+      $('#billing-last').val($('#shipping-last').val())
+      $('#billing-company').val($('#shipping-company').val())
+      $('#billing-address-1').val($('#shipping-address-1').val())
+      $('#billing-address-2').val($('#shipping-address-2').val())
+      $('#billing-state').val($('#shipping-state').val())
+      $('#billing-zip').val($('#shipping-zip').val())
     }
   });
 })
