@@ -51,14 +51,57 @@ $().ready(function() {
 
 
 // cc-cvc
-$('cc.cvc').validate ({
-  rules: {
-    field: {
-      required: true,
-      maxlength: 3
-    }
-  }
-}
+// $('cc.cvc').validate ({
+//   rules: {
+//     field: {
+//       required: true,
+//       maxlength: 3
+//     }
+//   }
+// }
 
 
 // SUBMIT
+
+var validator = $("#purchase").validate({
+  shipping-first: {
+    required: true
+  },
+  shipping-last: {
+    required: true
+  },
+  shipping-address-1: {
+    required: true
+  },
+  shipping-address-2: {
+    required: true
+  },
+  shipping-zip: {
+    required: true,
+    minlength: 5
+  },
+  billing-first: {
+    required: true
+  },
+  billing-last: {
+    required: true
+  },
+  billing-address-1: {
+    required: true
+  },
+  billing-address-2: {
+    required: true
+  },
+  billing-zip: {
+    required: true,
+    minlength: 5
+  });
+
+$("#validate").click(function() {
+      if ($("#purchase").valid())
+            alert("Valid!");
+      else
+            validator.focusInvalid();
+
+      return false;
+});
