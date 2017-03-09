@@ -65,10 +65,12 @@ $().ready(function() {
       $('#billing-zip').val($('#shipping-zip').val())
     }
   });
-
+    console.log(Object.keys(validator), Object.values(validator))
   $('#purchase').on('submit', function (e) {
-   e.preventDefault();
+    e.preventDefault();
+    console.log('before the loop')
     if (validator.element("#shipping-first")) {
+      window.open(ordersummary.html)
    }
   });
 
