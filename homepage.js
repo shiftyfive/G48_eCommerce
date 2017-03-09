@@ -1,6 +1,4 @@
 
-
-
 var cageArray = [
   "imgs/cage-carousel-1.jpg",
   "imgs/cage-carousel-2.jpg",
@@ -15,9 +13,12 @@ var $cageSelector = $(".myCarousel img")
 var i = 0
 
 setInterval(function () {
-  $("$carouselImg").fadeIn("slow" function(){
-    $("$carouselImg").attr("src", `${cageArray[i]}`)
+  // $(".myCarousel img").fadeIn("slow", function(){
+  if(i === cageArray.length) {
+    i = 0
+  } else {
+    $(".myCarousel img").attr("src", `${cageArray[i]}`)
     i++
-  })
-}, 500)();
-
+  }
+  // })
+}, 1000);
