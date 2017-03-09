@@ -1,5 +1,55 @@
 
 
+// $("#search").on('click', function () {
+//   // movie title for api query-can we make this equal to an li?
+//   var movieTitle = $('#movie-title').val();
+//
+// $('#movieTitle').on('change', 'input', function () {
+//     var movieTitle = $('#movie-title').val();
+//
+// $('#movieCategory').on('change', 'input', function () {
+//     var movieCategory = $('#movie-category').val();
+//
+// $('#movieRating').on('change', 'input', function () {
+//     var movieRating = $('#movie-rating').val();
+
+
+
+
+// request url by search movie title(s or t parameter) maybe we have to hard code searches to an li?
+  var sURL = "http://netflixroulette.net/api/api.php?actor=Nicolas%20Cage";
+
+
+
+// create a variable for the container for DOM manipulation
+  var container = $('#container');
+
+  // Make our GET request
+
+  $.ajax ({
+    method: 'GET',
+    url: 'http://netflixroulette.net/api/api.php?actor=Nicolas%20Cage',
+    success: function (results) {
+      console.log("Done: ", results);
+      var movies = results;
+      console.log(results);
+       $.each(movies,function (index, value) {
+        console.log(value);
+        container.append("<li><img src=" + value.poster + "></li>"+
+        '<li>' + value.show_title + '</li>' +
+        '<li>' + value.release_year + '</li>' +
+        '<li>' + value.category+ '</li>' +
+        '<li>' + value.show_cast + '</li>' +
+        '<li>' + value.summary + '</li>');
+      })()
+    },
+    error: function (error) {
+      console.log("Error: ", error);
+    }
+  });
+// });
+
+
 // $( "div " ).append( $newdiv1, [ newdiv2, existingdiv1 ] );
 // $('.share_list_popup ul').append('<li><a href="' + facebookLink + '">Facebook</a></li>');
 // ${votingTime}
@@ -47,4 +97,4 @@ for (var i = 0; i < 8 ; i++) {
     </div>`
   );
   $("body").append($product);
-}
+
