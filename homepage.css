@@ -1,5 +1,14 @@
-navbar-header {
-  font-size: 20px;
+.navbar-header .navbar-brand {
+  font-size: 30px;
+}
+
+.img-thumbnail {
+  width: 20%;
+  height: 20%;
+}
+
+.links li {
+  border: 0px;
 }
 
 .carousel-margin {

@@ -1,3 +1,6 @@
+
+
+
 var cageArray = [
   "imgs/cage-carousel-1.jpg",
   "imgs/cage-carousel-2.jpg",
@@ -17,3 +20,4 @@ setInterval(function () {
     i++
   })
 }, 500)();
+
