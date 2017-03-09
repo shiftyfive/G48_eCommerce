@@ -2,6 +2,11 @@ navbar-header {
   font-size: 20px;
 }
 
+.carousel-margin {
+  margin-top: 10%
+}
+
 .email-form {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
