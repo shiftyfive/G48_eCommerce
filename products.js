@@ -31,20 +31,20 @@ let ppDesc = 'description description description'
 //   },
 // ]
 
-for (var i = 0; i < 8 ; i++) {
-  let $product = $(
-    `<br>\
-    <div class="row">\
-    <div class="col-xs-4 text-center">\
-    <img id="ppImg" class="img-rounded" src=${ppImg}>\
-    </div>\
-    <div class="col-xs-8">\
-    <h4 id="ppTitle">${ppTitle}</h4>\
-    <small class="smPPprice"><strong>$</strong> 00.00</small>\
-    <p id="ppRating">${ppRating}</p>\
-    <p id="ppDesc">${ppDesc}</p>\
-    </div>\
-    </div>`
-  );
-  $("body").append($product);
-}
+// for (var i = 0; i < 8 ; i++) {
+//   let $product = $(
+//     `<br>\
+//     <div class="row">\
+//     <div class="col-xs-4 text-center">\
+//     <img id="ppImg" class="img-rounded" src=${ppImg}>\
+//     </div>\
+//     <div class="col-xs-8">\
+//     <h4 id="ppTitle">${ppTitle}</h4>\
+//     <small class="smPPprice"><strong>$</strong> 00.00</small>\
+//     <p id="ppRating">${ppRating}</p>\
+//     <p id="ppDesc">${ppDesc}</p>\
+//     </div>\
+//     </div>`
+//   );
+//   $("body").append($product);
+// }
