@@ -29,8 +29,6 @@ $().ready(function() {
     'shipping-zip': {
       required: true,
       regex: "^[0-9]{5}$"
-      //"^[0-9]{5}$"
-      // "\d{5}-?(\d{4})?"
     },
     'billing-first': {
       required: true
@@ -47,7 +45,6 @@ $().ready(function() {
     'billing-zip': {
       required: true,
       regex: "^[0-9]{5}$"
-      // OR "^[0-9]{5}$" = "-" + "^[0-9]{4}$"
     }
   })
 
@@ -75,35 +72,3 @@ $().ready(function() {
   });
 
 })
-
-
-// ADDING THIS IN CASE WE NEED TO SUBMIT THE DATA SOMEWHERE
-// var url = 'https://galvanize-student-apis.herokuapp.com/gpersonnel/roles'
-//
-// $.getJSON(url, function (response) {
-//  $.each(response, function (index, role) {
-//    $('.select-role').append('<option value="' + role.title + '">' + role.title + '</option>')
-//    $('.select-role').change(function () {
-//      $('.role-preview').attr('src', role.img)
-//    })
-//  })
-// })
-//
-// function postForm () {
-//  var $xhr = $.ajax({
-//    method: 'POST',
-//    url: 'https://galvanize-student-apis.herokuapp.com/gpersonnel/users',
-//    dataType: 'json',
-//    data: {firstName:$('#first-name').val(), lastName:$('#last-name').val(), role:$('#select-role option:selected').val()}
-//  }).then(function (result) {
-//    $('.save-status').append(result.message).fadeIn(500).delay(2000).fadeOut(500)
-//  })
-//  }).catch(function (error) {
-//    console.log('Error: ', error);
-//  })
-// }
-//
-// $('form').on('submit', function (e) {
-//  e.preventDefault();
-//  postForm();
-// });
