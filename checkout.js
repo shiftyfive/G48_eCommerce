@@ -68,8 +68,7 @@ $().ready(function() {
 
   $('#purchase').on('submit', function (e) {
    e.preventDefault();
-    if (validator.element("#shipping-first")) {
-   }
+    validator.element("#shipping-first") 
   });
 
 })
