@@ -9,12 +9,10 @@
 //     var movieCategory = $('#movie-category').val();
 //
 // $('#movieRating').on('change', 'input', function () {
-//     var movieRating = $('#movie-rating').val();
 // request url by search movie title(s or t parameter) maybe we have to hard code searches to an li?
   var sURL = "http://netflixroulette.net/api/api.php?actor=Nicolas%20Cage";
-// create a variable for the container for DOM manipulation
   var container = $('#container');
-  // Make our GET reqs
+  // Make our GET request
   $.ajax ({
     method: 'GET',
     url: 'http://netflixroulette.net/api/api.php?actor=Nicolas%20Cage',
