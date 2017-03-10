@@ -37,7 +37,6 @@
     }
   });
 // });
-=======
 // $( "div " ).append( $newdiv1, [ newdiv2, existingdiv1 ] );
 // $('.share_list_popup ul').append('<li><a href="' + facebookLink + '">Facebook</a></li>');
 // ${votingTime}
