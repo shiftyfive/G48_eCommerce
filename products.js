@@ -29,7 +29,6 @@ $.ajax ({
     }
   });
 
-<<<<<<< HEAD
   var $productTitles = $(".movieTitle").text();
 
 var $titleSelection = $("#title option:selected").text();
@@ -39,7 +38,7 @@ var $yearSelection = $("#year option:selected").text();
 $("#title").change(function(){
   alert( "Handler for .change() called." );
 })
-=======
+
   $('#title').change(function () {
     console.log('changed')
     var $titleSelection = $("#title option:selected").text();
@@ -49,4 +48,3 @@ $("#title").change(function(){
       }
     })
   });
->>>>>>> d65c188bc3ec7f26642deac4fa4b92e8f3ccd5af
