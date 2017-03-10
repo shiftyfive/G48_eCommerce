@@ -50,3 +50,7 @@
 var $titleSelection = $("#title option:selected").text();
 var $categorySelection = $("#category option:selected").text();
 var $yearSelection = $("#year option:selected").text();
+
+$("#title").change(function(){
+  alert( "Handler for .change() called." );
+})
