@@ -7,16 +7,11 @@
 //
 // $('#movieCategory').on('change', 'input', function () {
 //     var movieCategory = $('#movie-category').val();
-//
-// $('#movieRating').on('change', 'input', function () {
-// request url by search movie title(s or t parameter) maybe we have to hard code searches to an li?
   var sURL = "http://netflixroulette.net/api/api.php?actor=Nicolas%20Cage";
   // Make our GET request
 //     var movieRating = $('#movie-rating').val();
 // create a variable for the container for DOM manipulation
   var container = $('#container');
-  // Make our GET request
-// request url by search movie title(s or t parameter) maybe we have to hard code searches to an li?
   var sURL = "http://netflixroulette.net/api/api.php?actor=Nicolas%20Cage";
 // create a variable for the container for DOM manipulation
   var container = $('.products');
@@ -30,7 +25,7 @@
       var movies = results;
        $.each(movies,function (index, value) {
         let $product = (`<br>\
-            <div class="row">\
+            <div class="row product">\
             <div class="col-xs-4 text-center">\
             <img class="img-rounded poster" src=${value.poster}>\
             </div>\
@@ -41,7 +36,7 @@
             <p class="release_year">${value.release_year}</p>\
             </div>\
             </div>`);
-        $(".container .products").append($product);
+        $(".container-products").append($product);
 
       })()
     },
@@ -49,3 +44,9 @@
       console.log("Error: ", error);
     }
   });
+
+  var $productTitles = $(".movieTitle").text();
+
+var $titleSelection = $("#title option:selected").text();
+var $categorySelection = $("#category option:selected").text();
+var $yearSelection = $("#year option:selected").text();
