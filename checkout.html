@@ -1,117 +1,129 @@
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    // jquery validation
-    <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js'</script>
+    <!-- validation -->
+    <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js' </script>
+        < script defer src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js'
+    </script>
 
-    <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js'</script>
+    <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.js' </script>
+        < script defer src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js'
+    </script>
 
-      <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.js'</script>
+    <script src="https://js.stripe.com/v3/"></script>
 
-      <script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js'</script>
+    <script defer src='checkout.js'></script>
 
-      <script defer>src='checkout.js '</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link defer rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.min.css" crossorigin="anonymous">
 
-    <link defer rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="checkout.css">
 
-    <link defer rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.min.css" crossorigin="anonymous">
+    <title>eCommerce Checkout</title>
 
-    <link defer rel="stylesheet" href="checkout.css">
+</head>
 
-  <title>eCommerce Checkout</title>
-
-  </head>
-  <body>
+<header>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
 
             <div class="navbar-header">
-            <a class="navbar-brand text-muted" href="homepage.html">eCommerce</a>
-          </div>
+                <a class="navbar-brand text-muted" href="homepage.html">theCagePage</a>
+            </div>
 
             <div class="collapse navbar-collapse">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="homepage.html">Homepage</a></li>
+                    <li><a href="homepage.html">Homepage</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+                    <li class="active"><a href="checkout.html">Checkout</a></li>
                 </ul>
 
-                  <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item"><a id="cart-popover" class="btn" data-placement="bottom" title="shopping-cart">
-                        <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <a id="cart-popover" class="btn" data-placement="bottom" title="shopping-cart">
+                            <span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="#items">Total 4 items</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div id="content">
-      <form id="purchase">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <h1>Checkout</h1>
-            </div>
-          </div>
+</header>
 
-          <div id="summary">
-            <div class="row">
-              <div class="col-sm-12"><h2>Your Purchase</h2></div>
-            </div>
-            <div class="row">
-              <div class="col-sm-3">one</div>
-              <div class="col-sm-3">two</div>
-              <div class="col-sm-3">three</div>
-              <div class="col-sm-3">four</div>
-            </div>
-            <div class="row">
-              <div class="col-sm-3">one</div>
-              <div class="col-sm-3">two</div>
-              <div class="col-sm-3">three</div>
-              <div class="col-sm-3">four</div>
-            </div> <!-- end of row -->
-          </div>
-          <div id="shipping">
-            <div class="row">
-              <div class="col-sm-4">
-                <label for="shipping-first">First Name</label>
-                <input type="text" name="shipping-first"></input>
-              </div>
-              <div class="col-sm-4">
-                <label for="shipping-last">Last Name</label>
-                <input type="text" name="shipping-last"></input>
-              </div>
-              <div class="col-sm-4">
-                <label for="shipping-company">Company</label>
-                <input type="text" name="shipping-company"></input>
-              </div>
-            </div> <!-- end of row -->
-            <div class="row">
-              <div class="col-sm-6">
-                <label for="shipping-address-1">Address Line 1</label>
-                <input type="text" name="shipping-address-1"></input>
-              </div>
-              <div class="col-sm-6">
-                <label for="shipping-address-2">Address Line 2</label>
-                <input type="text" name="shipping-address-2"></input>
-              </div>
-            </div> <!-- end of row -->
-            <div class="row">
-              <div class="col-sm-3">
-                <label for="shipping-state">State</label>
-                <select type="dropdown" name="shipping-state">
+<body>
+    <div id="content">
+        <form id="purchase" method="get" action="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>Checkout</h1>
+                    </div>
+                </div>
+
+                <div id="summary" class="form-group bg-info">
+                    <div class="row">
+                        <div class="col-sm-12 col-sm-push-1">
+                            <h2>Your Purchase</h2></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3 col-sm-push-1">Lisa Marie Presley x 1</div>
+                        <div class="col-sm-3">$30.00</div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <div class="row padded-bottom">
+                        <div class="col-sm-3 col-sm-push-1">Patricia Arquette x 2</div>
+                        <div class="col-sm-3">$30.00</div>
+                        <div class="col-sm-3 col-sm-push-2">Total:</div>
+                        <div class="col-sm-3">$60.00</div>
+                    </div>
+                    <!-- end of row -->
+                </div>
+                <div id="shipping">
+                    <div class="row user-data form-group">
+                        <div class="col-sm-4">
+                            <label for="shipping-first">First Name</label>
+                            <input id="shipping-first" type="text" name="shipping-first" class="form-control" minlength="1" required></input>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="shipping-last">Last Name</label>
+                            <input id="shipping-last" type="text" name="shipping-last" class="form-control" minlength="1" required></input>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="shipping-company">Company</label>
+                            <input id="shipping-company" type="text" name="shipping-company" class="form-control" minlength="1" required></input>
+                        </div>
+                    </div>
+                    <!-- end of row -->
+                    <div class="row user-data form-group">
+                        <div class="col-sm-6">
+                            <label for="shipping-address-1">Address Line 1</label>
+                            <input id="shipping-address-1" type="text" name="shipping-address-1" class="form-control" minlength="1" minlength="1" required></input>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="shipping-address-2">Address Line 2</label>
+                            <input id="shipping-address-2" type="text" name="shipping-address-2" class="form-control"></input>
+                        </div>
+                    </div>
+                    <!-- end of row -->
+                    <div class="row user-data form-group">
+                        <div class="col-sm-4">
+                            <label for="shipping-state">State</label>
+                            <select id="shipping-state" type="dropdown" class=" btn-lg" name="shipping-state" required>
+                  <option value="">Select a State</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -164,46 +176,51 @@
                   <option value="WI">Wisconsin</option>
                   <option value="WY">Wyoming</option>
                 </select>
-              </div>
-              <div class="col-sm-3">
-                <label for="shipping-zip">Zip</label>
-                <input type="text" minlength="5" name="shipping-zip"></input>
-              </div>
-              <div class="col-sm-3">
-                <label for="shipping-copy_id">Copy shipping to billing</label>
-                <input id="shipping-copy_id" type="checkbox" name="shipping-copy"></input>
-              </div>
-            </div> <!-- end of row -->
-          </div>
-          <div id="billing">
-            <div class="row">
-              <div class="col-sm-4">
-                <label for="billing-first">First Name</label>
-                <input type="text" name="billing-first"></input>
-              </div>
-              <div class="col-sm-4">
-                <label for="billing-last">Last Name</label>
-                <input type="text" name="billing-last"></input>
-              </div>
-              <div class="col-sm-4">
-                <label for="billing-company">Company</label>
-                <input type="text" name="billing-company"></input>
-              </div>
-            </div> <!-- end of row -->
-            <div class="row">
-              <div class="col-sm-6">
-                <label for="billing-address-1">Address Line 1</label>
-                <input type="text" name="billing-address-1"></input>
-              </div>
-              <div class="col-sm-6">
-                <label for="billing-address-2">Address Line 2</label>
-                <input type="text" name="billing-address-2"></input>
-              </div>
-            </div> <!-- end of row -->
-            <div class="row">
-              <div class="col-sm-3">
-                <label for="billing-state">State</label>
-                <select type="dropdown" name="billing-state">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="shipping-zip">Zip</label>
+                            <input id="shipping-zip" type="text" name="shipping-zip" class="form-control" pattern="\d{5}-?(\d{4})?" required></input>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="shipping-copy-id">Copy shipping to billing
+                <input id="shipping-copy-id" type="checkbox" name="shipping-copy-id" class="form-control"></input>
+                </label>
+                        </div>
+                    </div>
+                    <!-- end of row -->
+                </div>
+                <div id="billing">
+                    <div class="row user-data form-group">
+                        <div class="col-sm-4">
+                            <label for="billing-first">First Name</label>
+                            <input id="billing-first" type="text" name="billing-first" class="form-control" minlength="1"></input>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="billing-last">Last Name</label>
+                            <input id="billing-last" type="text" name="billing-last" class="form-control" minlength="1" required></input>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="billing-company">Company</label>
+                            <input id="billing-company" type="text" name="billing-company" class="form-control"></input>
+                        </div>
+                    </div>
+                    <!-- end of row -->
+                    <div class="row user-data form-group ">
+                        <div class="col-sm-6">
+                            <label for="billing-address-1">Address Line 1</label>
+                            <input id="billing-address-1" type="text" name="billing-address-1" class="form-control" minlength="1" required></input>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="billing-address-2">Address Line 2</label>
+                            <input id="billing-address-2" type="text" name="billing-address-2" class="form-control"></input>
+                        </div>
+                    </div>
+                    <!-- end of row -->
+                    <div class="row user-data form-group ">
+                        <div class="col-sm-4">
+                            <label for="billing-state">State</label>
+                            <select id="billing-state" type="dropdown" class="btn-lg" name="billing-state" required>
+                  <option selected>Select a State</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -256,38 +273,80 @@
                   <option value="WI">Wisconsin</option>
                   <option value="WY">Wyoming</option>
                 </select>
-              </div> <!-- end of row -->
-              <div class="col-sm-3">
-                <label for="billing-zip">Zip</label>
-                <input type="text" name="billing-zip"></input>
-              </div>
-              <div class="col-sm-3">
-                <label for="billing-copy_id">Copy shipping to billing</label>
-                <input id="billing-copy_id" type="checkbox" name="billing-copy"></input>
-              </div>
-            </div> <!-- end of row -->
-          </div> <!-- end of billing -->
-          <div id="cc-information">
-            <div class="row">
-              <div class="col-sm-3">
-                <label for="cc-number">Credit Card Number</label>
-                <input type="text" name="cc-number"></input>
-              </div>
-              <div class="col-sm-3">
-                <label for="cc-expiration">Credit Card Expiry</label>
-                <input type="date" name="cc-expiration"></input>
-              </div>
-              <div class="col-sm-3">
-                <label for="cc-cvc">Credit Card Number</label>
-                <input type="text" name="cc-cvc"></input>
-              </div>
-              <div class="col-sm-3">
-               <input type="submit" name="purchase" value="Purchase"></input>
-              </div>
-            </div> <!-- end of row -->
-          </div> <!--end of billing -->
-        </div> <!-- end of container -->
-      </form>
-    </div> <!-- end of content -->
-  </body>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="billing-zip">Zip</label>
+                            <input id="billing-zip" type="text" name="billing-zip" class="form-control" pattern="\d{5}-?(\d{4})?" required></input>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <!-- end of row -->
+                </div>
+                <!-- end of billing -->
+                <div id="cc-information">
+                    <div class="row user-data form-group">
+                        <div class="col-sm-3">
+                            <label for="cc-number">Credit Card Number</label>
+                            <input id="cc-number" type="text" name="cc-number" class="form-control" minlength="16" pattern="\^[0-9]{16}$" required></input>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="cc-expiration">Credit Card Expiry</label>
+                            <input id="cc-expiration" type="date" name="cc-expiration" class="form-control" required></input>
+                        </div>
+                        <div class="col-sm-3 has-feedback">
+                            <label for="cc-cvc">Credit Card CVC</label>
+                            <input type="text" name="cc-cvc" class="form-control" minlength="3" maxlength="3" required></input>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="submit" name="submit" class=".sr-only"></label>
+                            <input id="submit-button" type="submit" class="btn btn-primary btn-lg" name="purchase" value="Purchase"></input>
+                        </div>
+                    </div>
+                    <!-- end of row -->
+                </div>
+                <!--end of billing -->
+            </div>
+    </div>
+    <!-- end of container -->
+    </form>
+    <!-- end of content -->
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 hidden.bs.collapse map-canvas">
+                <h4>Stalker Tracker</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52864.826641991036!2d-118.36158351013242!3d34.093816887189064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf07045279bf%3A0xf67a9a6797bdfae4!2sHollywood%2C+Los+Angeles%2C+CA!5e0!3m2!1sen!2sus!4v1489000323996"
+                    width="300" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <h4>Contact</h4>
+                    <p> 123 Con Air Lane, Hollywood, CA, USA</p>
+            </div>
+            <div class="col-sm-4 hidden.bs.collapse">
+                <h4>Ex-Wives</h4>
+                <ul class="list-group links">
+                    <li class="list-group-item"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSP3yPyc6Y359SOVrDt-j0gG6vENzC8s1GqzCC7RQnCokfb0S_70g" alt="..." class="img-thumbnail"><a href='checkout.html'>Lisa Marie Presley</a></li>
+                    <li class="list-group-item"><img src="http://i.dailymail.co.uk/i/pix/2015/09/28/21/2CDF6BC000000578-3252620-image-m-83_1443472707299.jpg" alt="..." class="img-thumbnail"><a href='checkout.html'>Patricia Arquette</a></li>
+                    <li class="list-group-item"><img src="http://dlisted.com/wp-content/uploads/2016/06/alicekimnicolascageover2016-500x630.jpg" alt="..." class="img-thumbnail"><a href='checkout.html'>Alicia Kim</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 hidden.bs.collapse">
+                <h4>More "Cage' Links</h4>
+                <ul class="list-group links">
+                    <li class="list-group-item"><a href='https://www.facebook.com/Nicolas.cage.fan.Official/'>Official Fan Club</a></li>
+                    <li class="list-group-item"><a href='http://nicolascage.us/'>Unoffical Fan Club</a></li>
+                    <li class="list-group-item"><a href='https://www.reddit.com/r/onetruegod/'>Sub Reddit</a></li>
+                    <li class="list-group-item"><a href='http://www.imdb.com/name/nm0000115/'>Movies IMDb</a></li>
+                    <li class="list-group-item"><a href='http://newsfeed.time.com/2014/01/06/50-nicolas-cage-facts-for-the-50th-birthday-of-this-national-treasure/'>50 Things To Know</a></li>
+                    <li class="list-group-item"><a href='http://www.dailymail.co.uk/tvshowbiz/article-3659098/Nicolas-Cage-Alice-Kim-secretly-separated-six-months-ago-11-years-marriage.html'>50 Best Movies</a></li>
+                    <li class="list-group-item"><a href='http://www.dailymail.co.uk/tvshowbiz/article-3659098/Nicolas-Cage-Alice-Kim-secretly-separated-six-months-ago-11-years-marriage.html'>Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <p>&copy; 2017 - Nick Cage is Awesome</p>
+        </div>
+    </div>
+</body>
+
 </html>

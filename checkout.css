@@ -1,10 +1,36 @@
-#content{
-  border:1px solid red;
+* {
+  box-sizing: border-box;
 }
 
-#content #summary{
-  background-color: #ccc;
+#content #summary {
+  /*background-color: #2c3e50;
+  color: white;*/
 }
+.navbar-header .navbar-brand {
+    font-size: 30px;
+  }
+
+  .img-thumbnail {
+    width: 20%;
+    height: 10%;
+  }
+
+  .links li {
+    border: 0px;
+  }
+
+
+}
+
 label {
   display: block;
+  font-weight: lighter;
+}
+
+.padded-bottom {
+  margin-bottom: 20px;
+}
+
+.invalid-data {
+  border-color: red;
 }

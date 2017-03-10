@@ -1,1 +1,12 @@
+.navbar-header .navbar-brand {
+  font-size: 30px;
+}
 
+.img-thumbnail {
+  width: 20%;
+  height: 10%  
+}
+
+.links li {
+  border: 0px;
+}
